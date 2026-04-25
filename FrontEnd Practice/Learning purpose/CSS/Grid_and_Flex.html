@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      padding: 20px;
+      background: #f5f5f5;
+    }
+
+    .table {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr 1fr;
+        border: 2px solid #333;
+        border-radius: 8px;
+        overflow: hidden;
+    } 
+
+    .cell {
+      padding: 12px;
+      border-bottom: 1px solid #ccc;
+      border-right: 1px solid #ccc;
+
+      /* FLEX for alignment */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+     /* Remove last column border */
+    .cell:nth-child(4n) {
+      border-right: none;
+    }
+
+     /* ===== HEADER ===== */
+    .header {
+      background: #333;
+      color: white;
+      font-weight: bold;
+    }
+
+    .cell:hover {
+  background: #629bd9;
+}
+
+.status {
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      color: white;
+    }
+
+     .active {
+      background: green;
+    }
+
+    .inactive {
+      background: red;
+    }
+
+
+    </style>
+</head>
+<body>
+    <h2>Employee Table (Grid + Flex)</h2>
+
+  <div class="table">
+
+    <!-- HEADER -->
+    <div class="cell header">ID</div>
+    <div class="cell header">Name</div>
+    <div class="cell header">Role</div>
+    <div class="cell header">Status</div>
+
+    <!-- ROW 1 -->
+    <div class="cell">1</div>
+    <div class="cell">Vignesh</div>
+    <div class="cell">Frontend</div>
+    <div class="cell">
+      <span class="status active">Active</span>
+    </div>
+
+    <!-- ROW 2 -->
+    <div class="cell">2</div>
+    <div class="cell">Rahul</div>
+    <div class="cell">Backend</div>
+    <div class="cell">
+      <span class="status inactive">Inactive</span>
+    </div>
+
+    <!-- ROW 3 -->
+    <div class="cell">3</div>
+    <div class="cell">Anita</div>
+    <div class="cell">UI/UX</div>
+    <div class="cell">
+      <span class="status active">Active</span>
+    </div>
+
+  </div>
+</body>
+</html>

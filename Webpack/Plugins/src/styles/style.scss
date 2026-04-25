@@ -1,0 +1,17 @@
+$color : #e21010;
+$col : blue;
+
+.section .title{
+    font-size: 35px;
+    padding-bottom: 10px;
+    color : $color;
+    font-family: "Bitcount Grid Double Ink", system-ui;
+    font-weight: 400;
+}
+
+.section .description{
+    font-size: 18px;
+    color : $col; 
+    font-family: "Bitcount Grid Double Ink", system-ui;
+    font-weight: 400;
+}

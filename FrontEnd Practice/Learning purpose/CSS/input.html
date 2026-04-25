@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+         * {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+
+  body {
+    background: #9fb1c3;
+    padding: 30px;
+  }
+
+  .form{
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .row{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+   /* ===== INPUT / SELECT / TEXTAREA ===== */
+  input,
+  select,
+  textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+
+    transition: all 0.2s ease;
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 80px;
+  }
+
+   /* ===== FOCUS STATE (IMPORTANT) ===== */
+  input:focus,
+  select:focus,
+  textarea:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0,123,255,0.2);
+  }
+
+   /* ===== ACCESSIBILITY (LABEL) ===== */
+  label {
+    font-size: 13px;
+    font-weight: bold;
+  }
+
+   /* ===== BUTTON ===== */
+  button {
+    padding: 10px;
+    border: none;
+    background: #007bff;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background: #0056b3;
+  }
+
+    </style>
+</head>
+<body>
+    <form class="form">
+
+  <!-- INPUT -->
+  <div class="row">
+    <label for="name">Name</label>
+    <input id="name" type="text" placeholder="Enter your name" />
+  </div>
+
+  <!-- SELECT -->
+  <div class="row">
+    <label for="role">Role</label>
+    <select id="role">
+      <option>Frontend</option>
+      <option>Backend</option>
+      <option>UI/UX</option>
+    </select>
+  </div>
+
+  <!-- TEXTAREA -->
+  <div class="row">
+    <label for="msg">Message</label>
+    <textarea id="msg" placeholder="Type here..."></textarea>
+  </div>
+
+  <!-- BUTTON -->
+  <button type="submit">Submit</button>
+
+</form>
+</body>
+</html>

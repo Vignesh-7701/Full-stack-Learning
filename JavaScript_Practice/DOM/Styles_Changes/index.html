@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Styles and Classes Playground</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h2>Styles and Classes Demo</h2>
+
+<div id="box" class="box">
+Hello DOM
+</div>
+
+<div class="controls">
+
+<button onclick="setClassName()">className</button>
+
+<button onclick="addClass()">classList.add()</button>
+
+<button onclick="removeClass()">classList.remove()</button>
+
+<button onclick="toggleClass()">classList.toggle()</button>
+
+<button onclick="checkClass()">classList.contains()</button>
+
+<button onclick="setInlineStyle()">element.style</button>
+
+<button onclick="removeInlineStyle()">removeProperty()</button>
+
+<button onclick="setCssText()">cssText</button>
+
+<button onclick="readComputedStyle()">getComputedStyle()</button>
+
+</div>
+
+<p id="output"></p>
+
+<script src="script.js"></script>
+
+</body>
+</html>

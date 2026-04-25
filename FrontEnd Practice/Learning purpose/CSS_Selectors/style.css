@@ -1,0 +1,85 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.nav-link{
+    text-decoration: none;
+}
+
+.special{
+    color : red;
+}
+
+.hero p {
+  font-size: 1.2em;
+}
+
+.card[data-type="premium"]{
+    border: 2px solid gold;
+}
+
+button:hover {
+  background-color: black;
+  color: white;
+}
+
+button::before {
+  content: "🔥 ";
+}
+
+.title {
+  color: #ff5733; 
+}
+
+.subtitle {
+  color: rgb(0, 128, 255); 
+}
+
+.btn {
+  background-color: rgba(0, 200, 100, 0.7); 
+}
+
+.title{
+    font-size: 2rem;
+}
+
+.subtitle{
+    font-size: 1.5em;
+}
+
+.card {
+  width: 45%; 
+}
+
+.hero {
+  height: 50vh; 
+}
+
+body {
+  text-align: center;
+}
+
+.navbar {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: Arial, sans-serif;
+}
+
+/* Answer */
+.navbar {
+  background-color: #333;
+}
+
+.hero {
+  background-image: url("https://via.placeholder.com/800");
+  background-size: cover;
+  background-position: center;
+}
+
+/* Answer */
+.btn {
+  background: linear-gradient(to right, blue, purple);
+  color: white;
+  padding: 10px 20px;
+}

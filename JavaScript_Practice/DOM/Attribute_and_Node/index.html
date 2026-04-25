@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DOM Node & Attribute Testing</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1 id="title">DOM Testing Page</h1>
+
+<div id="container" class="box" data-user="vignesh">
+  <p id="para">Hello <b>World</b></p>
+  <span>Second child</span>
+</div>
+
+<input id="inputField" type="text" value="Default text">
+<input id="checkbox" type="checkbox" checked>
+<br><br>
+<button onclick="nodeInfo()">Node Info</button>
+<button onclick="contentTest()">Content Test</button>
+<button onclick="treeTest()">Tree Navigation</button>
+<button onclick="attributeTest()">Attribute Methods</button>
+<button onclick="propertyVsAttribute()">Property vs Attribute</button>
+
+<script src="script.js"></script>
+
+</body>
+</html>

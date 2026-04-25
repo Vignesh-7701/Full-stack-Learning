@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .container {
+      position: relative;
+      width: 300px;
+      height: 150px;
+      border: 2px solid black;
+      margin-bottom: 20px;
+    }
+
+    .box1 {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 100px;
+      height: 100px;
+      background: red;
+      z-index: 1;
+    }
+
+    .box2 {
+      position: absolute;
+      top: 40px;
+      left: 40px;
+      width: 100px;
+      height: 100px;
+      background: blue;
+      z-index: 2; /* on top */
+    }
+
+     /* stacking context example */
+    .parent {
+      position: relative;
+      z-index: 1;
+      background: lightgray;
+      padding: 20px;
+    }
+
+    .child {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: green;
+      z-index: 999; /* still inside parent layer */
+      width: 80px;
+      height: 80px;
+    }
+
+    /* overflow */
+    .overflow-box {
+      width: 200px;
+      height: 100px;
+      border: 2px solid black;
+      overflow: auto;
+    }
+
+    .content {
+      height: 200px;
+      background: lightblue;
+    }
+
+     /* smooth scroll */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .spacer {
+      height: 800px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <h3>Z-Index</h3>
+  <div class="container">
+    <div class="box1"></div>
+    <div class="box2"></div>
+  </div>
+
+  <h3>Stacking Context</h3>
+  <div class="parent">
+    Parent
+    <div class="child"></div>
+  </div>
+
+  <h3>Overflow</h3>
+  <div class="overflow-box">
+    <div class="content">Scroll me</div>
+  </div>
+
+  <h3>Smooth Scroll</h3>
+  <a href="#bottom">Go to Bottom</a>
+
+  <div class="spacer"></div>
+
+  <h2 id="bottom">Bottom Section</h2>
+
+</body>
+</html>

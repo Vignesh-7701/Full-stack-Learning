@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Event Delegation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h2>Menu (data-action)</h2>
+  <div id="menu">
+    <button data-action="save">Save</button>
+    <button data-action="load">Load</button>
+    <button data-action="search">Search</button>
+  </div>
+
+  <h2>List (Delegation)</h2>
+  <ul id="list">
+    <li><strong>Item 1</strong></li>
+    <li><strong>Item 2</strong></li>
+  </ul>
+
+  <button id="addItem">Add Item</button>
+
+  <h2>Counter (Behavior)</h2>
+  <button data-counter>1</button>
+  <button data-counter>5</button>
+
+  <script src="script.js"></script>
+</body>
+</html>

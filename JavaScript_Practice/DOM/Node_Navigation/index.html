@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM Node Navigation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2 id="title">DOM Node Navigation Example</h2>
+
+<div id="parent">
+
+    Text Node
+
+    <p id="child1">Child 1</p>
+    <p id="child2">Child 2</p>
+    <p id="child3">Child 3</p>
+
+</div>
+
+<h3>Node Navigation</h3>
+
+<button onclick="showParentNode()">parentNode</button>
+<button onclick="showChildNodes()">childNodes</button>
+<button onclick="showFirstChild()">firstChild</button>
+<button onclick="showLastChild()">lastChild</button>
+<button onclick="showPrevSibling()">previousSibling</button>
+<button onclick="showNextSibling()">nextSibling</button>
+
+<h3>Element Navigation</h3>
+
+<button onclick="showParentElement()">parentElement</button>
+<button onclick="showChildren()">children</button>
+<button onclick="showFirstElement()">firstElementChild</button>
+<button onclick="showLastElement()">lastElementChild</button>
+<button onclick="showPrevElement()">previousElementSibling</button>
+<button onclick="showNextElement()">nextElementSibling</button>
+
+<div id="output">Result will appear here</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

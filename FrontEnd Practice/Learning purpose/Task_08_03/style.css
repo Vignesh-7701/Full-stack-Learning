@@ -1,0 +1,89 @@
+body{
+    font-family: Arial;
+    margin: 0;
+}
+
+h1{
+    color:darkblue;
+}
+
+.box{
+    border:2px solid black;
+    padding:10px;
+    margin:10px;
+}
+
+#mainHeader{
+    background:lightgray;
+    padding:10px;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+h2, h3{
+    color:darkgreen;
+}
+
+.boxModel{
+    width:200px;
+    padding:20px;
+    border:5px solid red;
+    margin:20px;
+    background:lightyellow;
+}
+
+a:hover{
+    color:black;
+}
+
+a:visited{
+    color:purple;
+}
+
+input:focus{
+    background:lightyellow;
+}
+
+li:first-child{
+    color:blue;
+}
+
+p::first-letter{
+    font-size:25px;
+}
+
+p::selection{
+    background:black;
+    color:white;
+}
+
+.floatBox{
+    width:100px;
+    height:100px;
+    background:orange;
+    float:left;
+    margin-right:10px;
+}
+
+.clear{
+    clear:both;
+}
+
+input[type="text"]{
+    border:2px solid green;
+}
+
+div > span{
+    color:red;
+}
+
+aside{
+    border:5px , yellow , dotted;
+    float: right;
+    height: 100px;
+    width: 200px;
+
+}
+/*div span - anywhere in div , div > span direct child of div */

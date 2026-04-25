@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .first p { color:blueviolet ;
+            font-family : helvetica;
+            font-size: 20px;
+            font-weight: bold;
+            line-height: 1.6em;
+            letter-spacing: 0.1cm;
+            word-spacing: 1cm;
+        }
+
+        .demo{
+            color:rgb(47, 70, 24);
+            margin: 20px 5px;
+            border: 10px red solid;
+            padding: 30px;
+            border-radius:55px ;
+        }
+
+        .container{
+            width: 50% ;
+            margin:auto;
+        }
+
+        .lists{
+            border:5px double blue; 
+            margin: 10%;
+            list-style:square;
+        }
+
+        .lists p{
+            color: black;
+        }
+
+        .lists ul{
+            list-style: square;
+        }
+
+        .lists a{
+            color:orange;
+        }
+
+        a:hover{
+            color : yellow;
+        }
+
+        .forms{
+            margin: 5px;
+        }
+
+        .form1 input[type ='text']{
+            width: 100%;
+        }
+
+        .float{
+            float:left;
+            width: 65%;
+            border: 2px red solid;
+            box-sizing: border-box;
+        }
+
+        .float2{
+            float:right;
+            width: 30%;
+        }
+
+        .clr{
+            clear: both;
+        }
+
+        .p-box{
+            width: 150px;
+            height: 200px;
+            padding: 15px;
+            border: 2px green dotted;
+            position: fixed;
+            
+        }
+
+        .psudo li:first-child{
+            color: yellow;
+        }
+
+        .psudo li:nth-child(3){
+            color: yellow;
+        }
+    </style>
+</head>
+<body>
+
+
+     <ul class="psudo">
+                <li>apple</li>
+                <li>apple</li>
+                <li>apple</li>
+                <li><a href="#">Link</a></li>
+            </ul>
+
+
+
+    <div class="float">
+        <h1>Paragraph</h1>
+        <p>
+            In this video I will cram as much as possible about CSS. We will be looking 
+            at styles, selectors, declarations, etc. We will build a CSS cheat sheet 
+            that you can keep as a resource and we will also create a basic 
+            website layout. We are using CSS3 but mostly the basics.
+        </p>
+    </div>
+
+     <div class="float2">
+        <h1>Paragraph</h1>
+        <p>
+            In this video I will cram as much as possible about CSS. We will be looking 
+            at styles, selectors, declarations, etc. We will build a CSS cheat sheet 
+            that you can keep as a resource and we will also create a basic 
+            website layout. We are using CSS3 but mostly the basics.
+        </p>
+    </div>
+
+     
+
+    <div class="clr"></div>
+
+    <div class="p-box">
+        <h1>Hello</h1>
+        <h2>Viki</h2>
+    </div>
+
+    <br>
+
+
+    <a href="#">Hello</a>
+    <div class="first">
+    <p >This email was intended for 
+        Vignesh P (Angular Developer | Node.js | JavaScript 
+        | RxJS | TypeScript | Express | Redis | High Concurrency Systems 
+        | JWT | REST API | MySQL | Spring Boot Basics)</p> 
+        </div>
+
+        <div class="container">
+        <div class="demo">
+            This email was intended for Vignesh P (Angular Developer |
+             Node.js | JavaScript | RxJS | TypeScript | Express | Redis |
+              High Concurrency Systems | JWT | REST API | MySQL |
+               Spring Boot Basics)
+        </div>
+        </div>
+
+        <div class="lists">
+            <p>List - Unordered</p>
+            <ul>
+                <li>apple</li>
+                <li>apple</li>
+                <li>apple</li>
+                <li><a href="#">Link</a></li>
+            </ul>
+        </div>
+
+        <div class="forms">
+            <div class="form1">
+                <label>Name</label>
+                <input type="text">
+<br>
+                  <label>email</label>
+                <input type="email">
+            </div>
+        </div>
+</body>
+</html>

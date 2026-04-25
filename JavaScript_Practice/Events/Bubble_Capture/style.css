@@ -1,0 +1,17 @@
+body {
+  font-family: Arial;
+}
+
+#outer {
+  padding: 30px;
+  background: lightblue;
+}
+
+#middle {
+  padding: 30px;
+  background: lightgreen;
+}
+
+#inner {
+  padding: 10px;
+}

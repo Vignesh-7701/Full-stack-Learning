@@ -1,0 +1,30 @@
+svg  { 
+    background-color: rgba(200, 155, 179, 0.553);
+}
+
+.icon {
+  stroke: #eb3030;
+  stroke-width: 2px;
+  stroke-linecap: square;  /* Rounds the ends of your lines */
+  stroke-linejoin:round; /* Softens sharp corners where two lines meet */
+  fill: none;             /* Prevents the shape from filling with solid black */
+}
+
+.draw-animation path {
+      stroke: #2563eb;        /* Blue color for the line */
+      stroke-width: 3px;      /* Thickness of the line */
+      fill: yellow;             /* Transparent inside */
+      stroke-linecap: round;  /* Rounded ends */
+      stroke-linejoin: round; /* Rounded corners */
+      
+      /* The Magic Trick */
+      stroke-dasharray: 500;
+      stroke-dashoffset: 500; /* Pushes the stroke entirely off the path */
+      animation: drawIn 2s ease-in-out forwards;
+    }
+
+    @keyframes drawIn {
+      to {
+        stroke-dashoffset: 100; /* Brings the stroke back, making it "draw" */
+      }
+    }

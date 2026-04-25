@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header id="mainHeader">
+        <h1>HTML Practice</h1>
+        <p>This page covers most HTML tags and CSS basics.</p>
+    </header>
+
+    <section class="box">
+        <h2>Links</h2>
+        <a href="https://google.com">External Link</a><br>
+        <a href="#formSection">Internal Link</a><br>
+        <a href="mailto:test@gmail.com">Email Link</a><br>
+        <a href="tel:+911234567890">Phone Link</a><br>
+        <a href="https://google.com" target="_blank">Open in new tab</a>
+
+    </section>
+
+    <section class="box">
+        <h3> Implementing Text types : </h3>
+        <p>This is a <b>bold</b> text</p>
+        <p>This is <strong>important text</strong></p>
+        <p>This is <i>italic</i></p>
+        <p>This is <em>emphasized</em></p>
+        <p>This is <mark>highlighted</mark></p>
+        <p>This is <small>small text</small></p> 
+
+        <p>This is <del>deleted</del></p>
+        <p>This is <ins>inserted</ins></p>
+        <p>H<sub>2</sub>O</p>
+        <p>10<sup>2</sup></p>
+    </section>
+
+    <section class="box">
+        <h2>Lists</h2>
+
+        <h3>Unordered List</h3>
+            <ul>
+                <li>Item One</li>
+                <li>Item Two</li>
+                <li>Item Three</li>
+            </ul>
+
+        <h3>Ordered List</h3>
+            <ol>
+                <li>Step One</li>
+                <li>Step Two</li>
+                <li>Step Three</li>
+            </ol>
+
+        <dl>
+            <dt>HTML</dt>
+            <dd>MarkUp Language</dd>
+
+            <dt>CSS</dt>
+            <dd>Styling Language</dd>
+        </dl>
+    </section>
+
+    <section class="box">
+        <h2>Table</h2>
+        <table border="1">
+
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>City</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>Viki</td>
+                    <td>25</td>
+                    <td>Salem</td>
+                </tr>
+                <tr>
+                    <td>Arun</td>
+                    <td>26</td>
+                    <td>Cbe</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section class="box">
+        <h2>Media</h2>
+        <img src="download.jpg.jfif"
+             alt="Image Not Found">
+             <br>
+    </section>
+
+    <section class="box">
+        <h2>Float Example</h2>
+            <div class="floatBox"></div>
+                <p>
+                    This text flows around the floated box.
+                    Float is used for layout alignment in older CSS.
+                </p>
+
+        <div class="clear"></div>
+    </section>
+
+    <section id="formSection" class="box">
+        <h2>Forms</h2>
+            <form>
+                <label>Name</label><br>
+                <input type="text" placeholder="Enter name"><br><br>
+
+                <label>Email</label><br>
+                <input type="email"><br><br>
+
+                <label>Password</label><br>
+                <input type="password"><br><br>
+
+                <label>Age</label><br>
+                <input type="number"><br><br>
+
+                <label>Date</label><br>
+                <input type="date"><br><br>
+
+                <label>Upload File</label><br>
+                <input type="file"><br><br>
+
+                <label>Gender</label><br>
+                <input type="radio" name="gender"> Male
+                <input type="radio" name="gender"> Female
+                <br><br>
+
+                <label>Skills</label>
+
+                <input type="checkbox"> HTML
+                <input type="checkbox"> CSS
+                <input type="checkbox"> JS
+
+                <br><br>
+
+                <label>City</label>
+
+                <select>
+
+                <option>Chennai</option>
+                <option>Bangalore</option>
+                <option>Delhi</option>
+
+                </select>
+
+                <br><br>
+
+                <textarea rows="4" cols="30"></textarea>
+
+                <br><br>
+
+                <input type="submit">
+
+                <input type="reset">
+
+                <button type="button">Normal Button</button>
+
+            </form>
+        </section>
+
+        <section class="box">
+            <h2>Semantic Tags</h2>
+
+            <article>
+                <h3>Article Title</h3>
+                <p>This is article content</p>
+            </article>
+
+            <aside>
+                <p>
+                    This is sidebar content
+                </p>
+            </aside>
+            <div class="clear"></div>
+        </section>
+
+        <section class="box">
+            <h2>
+                Inline Element
+            </h2>
+            <span>Span Text</span>
+            <span>Another span</span>
+
+            <div>
+                <span>
+                    Child Selector example
+                </span>
+            </div>
+        </section>
+
+        <section class="box">
+            <h2>Box Model</h2>
+            <div class="boxModel">
+                Content
+            </div>
+        </section>
+
+        <footer class="box">
+            <p>
+                Footer Section
+            </p>
+        </footer>
+
+</body>
+</html>

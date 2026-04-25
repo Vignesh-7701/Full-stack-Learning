@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Scalable CSS</title>
+
+<style>
+  /* ===== CSS VARIABLES ===== */
+  :root {
+    --primary: #007bff;
+    --secondary: #6c757d;
+    --radius: 8px;
+    --padding: 10px;
+  }
+
+  /* ===== BASE ===== */
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+
+  /* ===== BEM NAMING ===== */
+  .card {
+    border: 1px solid #ccc;
+    border-radius: var(--radius);
+    padding: var(--padding);
+    margin-bottom: 15px;
+  }
+
+  .card__title {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  .card__text {
+    font-size: 14px;
+    color: #555;
+  }
+
+  /* ===== REUSABLE BUTTON ===== */
+  .btn {
+    padding: var(--padding);
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+  }
+
+  .btn--primary {
+    background: var(--primary);
+    color: white;
+  }
+
+  .btn--secondary {
+    background: var(--secondary);
+    color: white;
+  }
+
+</style>
+</head>
+
+<body>
+
+  <!-- REUSABLE COMPONENT -->
+  <div class="card">
+    <div class="card__title">Title</div>
+    <div class="card__text">Some description</div>
+    <button class="btn btn--primary">Save</button>
+  </div>
+
+  <div class="card">
+    <div class="card__title">Another</div>
+    <div class="card__text">More text</div>
+    <button class="btn btn--secondary">Cancel</button>
+  </div>
+
+</body>
+</html>

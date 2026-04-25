@@ -1,0 +1,134 @@
+/*
+MAIN AXIS  → justify-content (← →)
+
+CROSS AXIS ↓
+   align-items   → moves items inside row
+   align-content → moves whole rows
+
+   */
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flexbox Complete Reference</title>
+
+  <style>
+    /* =========================================
+       BASIC PAGE STYLING (for visibility)
+       ========================================= */
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    /* =========================================
+       FLEX CONTAINER (Parent Box)
+       ========================================= */
+    .container {
+      display: flex;
+      /* enables flexbox layout */
+
+      /* -------- FLEX DIRECTION -------- */
+      flex-direction: row;
+      /* row | row-reverse | column | column-reverse */
+
+      /* -------- MAIN AXIS ALIGNMENT -------- */
+      justify-content: flex-start;
+      /* flex-start | flex-end | center |
+         space-between | space-around | space-evenly */
+
+      /* -------- CROSS AXIS ALIGNMENT -------- */
+      align-items: flex-start;
+      /* stretch | flex-start | flex-end | center | baseline */
+
+      /* -------- WRAP -------- */
+      flex-wrap: wrap;
+      /* nowrap | wrap | wrap-reverse */
+
+      /* shorthand */
+      flex-flow: row wrap;
+
+      /* -------- MULTI-LINE ALIGNMENT -------- */
+      align-content: flex-start;
+      /* works only when wrapping
+         same values as justify-content */
+
+      /* -------- GAP -------- */
+      gap: 15px;
+      /* spacing between items */
+
+      /* -------- BOX STYLING -------- */
+      border: 3px solid black;
+      padding: 20px;
+      margin: 20px;
+      height: 300px;
+      background-color: #f5f5f5;
+    }
+
+    /* =========================================
+       FLEX ITEMS (Child Boxes)
+       ========================================= */
+    .item {
+      background-color: lightblue;
+      border: 2px solid blue;
+
+      padding: 20px;
+
+      width: 80px;
+      height: 80px;
+
+      text-align: center;
+      line-height: 40px;
+
+      /* -------- FLEX ITEM PROPERTIES -------- */
+
+      flex-grow: 0;
+      /* grow factor */
+
+      flex-shrink: 1;
+      /* shrink factor */
+
+      flex-basis: auto;
+      /* initial size */
+
+      /* shorthand */
+      flex: 0 1 auto;
+
+      order: 0;
+      /* change order */
+
+      align-self: auto;
+      /* override alignment */
+    }
+
+    /* Example overrides for learning */
+
+    .item:nth-child(2) {
+      flex: 1;
+      /* takes more space */
+    }
+
+    .item:nth-child(3) {
+      align-self: flex-end;
+      /* different alignment */
+    }
+
+  </style>
+</head>
+<body>
+
+  <h2>Flexbox Complete Practice</h2>
+
+  <!-- FLEX CONTAINER -->
+  <div class="container">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+  </div>
+
+</body>
+</html>

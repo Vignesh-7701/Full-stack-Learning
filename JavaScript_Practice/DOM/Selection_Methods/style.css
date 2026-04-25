@@ -1,0 +1,21 @@
+body{
+    font-family: Arial;
+    text-align: center;
+}
+
+.text{
+    font-size: 18px;
+}
+
+.box{
+    width: 120px;
+    height: 120px;
+    background-color: lightgray;
+    margin: 10px auto;
+    line-height: 120px;
+}
+
+button{
+    margin: 5px;
+    padding: 10px;
+}

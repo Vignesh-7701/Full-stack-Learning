@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Browser Events Demo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>Browser Events Demo</h1>
+
+  <!-- 1. HTML Attribute -->
+  <button onclick="htmlClick()">HTML Click</button>
+
+  <!-- 2. DOM Property -->
+  <button id="domBtn">DOM Property Click</button>
+
+  <!-- 3. addEventListener -->
+  <button id="eventBtn">addEventListener Click</button>
+
+  <!-- Event Object Demo -->
+  <div id="box">Click Me (Check console)</div>
+
+  <!-- this keyword -->
+  <button onclick="showText(this)">Show My Text</button>
+
+  <!-- Remove Listener -->
+  <button id="removeBtn">Click Once</button>
+
+  <script src="script.js"></script>
+</body>
+</html>

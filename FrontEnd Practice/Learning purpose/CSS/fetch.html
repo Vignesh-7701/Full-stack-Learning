@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch API Headers Demo</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .section {
+            margin-top: 20px;
+            padding: 15px;
+            background: #eee;
+            border-radius: 5px;
+            border-left: 5px solid #007bff;
+        }
+        pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            background: #272822;
+            color: #f8f8f2;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        h3 { margin-top: 0; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>JavaScript Fetch: Headers Explorer</h2>
+    <p>Click the button to trigger a <code>fetch()</code> request with custom headers.</p>
+    
+    <button id="fetchBtn">Run Fetch Request</button>
+
+    <div class="section">
+        <h3>1. Request Headers Sent</h3>
+        <p>We are sending a custom header: <code>"X-Custom-Header": "HelloFetch"</code></p>
+    </div>
+
+    <div class="section">
+        <h3>2. Response Headers Received</h3>
+        <pre id="responseHeaders">Waiting for request...</pre>
+    </div>
+
+    <div class="section">
+        <h3>3. Data Body</h3>
+        <pre id="responseBody">Waiting for request...</pre>
+    </div>
+</div>
+
+<script>
+    document.getElementById('fetchBtn').addEventListener('click', async () => {
+        const headerDisplay = document.getElementById('responseHeaders');
+        const bodyDisplay = document.getElementById('responseBody');
+        
+        headerDisplay.textContent = "Fetching...";
+        bodyDisplay.textContent = "Fetching...";
+
+        try {
+            // STEP 1: Setting REQUEST HEADERS
+            const url = 'https://jsonplaceholder.typicode.com/todos/1';
+            const options = {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-Custom-Header': 'HelloFetch' // A custom header
+                }
+            };
+
+            // STEP 2: Execute Fetch (Wait for Headers)
+            const response = await fetch(url, options);
+
+            // STEP 3: Accessing RESPONSE HEADERS
+            // response.headers is a Map-like object
+            let headersText = "";
+            for (let [key, value] of response.headers) {
+                headersText += `${key}: ${value}\n`;
+            }
+            headerDisplay.textContent = headersText;
+
+            // STEP 4: Accessing the BODY
+            if (response.ok) {
+                const data = await response.json();
+                bodyDisplay.textContent = JSON.stringify(data, null, 2);
+            } else {
+                bodyDisplay.textContent = `Error: ${response.status}`;
+            }
+
+        } catch (error) {
+            headerDisplay.textContent = "Network Error";
+            bodyDisplay.textContent = error.message;
+        }
+    });
+</script>
+
+</body>
+</html>
