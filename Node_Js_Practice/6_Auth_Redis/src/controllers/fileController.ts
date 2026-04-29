@@ -1,13 +1,20 @@
 import { Request, Response } from 'express';
 import path from 'path';
 import fs from 'fs';
+import debug from 'debug';
+
+// Initialize the files namespace
+const fileLog = debug('app:files');
 
 export const uploadFile = (req: Request, res: Response): void => {
   // Multer attaches the file object to req.file
   if (!req.file) {
+    //log failure
+    fileLog('Upload failed: No file provided.');
     res.status(400).json({ message: 'No valid file uploaded.' });
     return;
   }
+
 
   res.status(200).json({
     message: 'File uploaded successfully',
@@ -35,6 +42,9 @@ export const getFile = (req: Request, res: Response): void => {
   // path.basename() strips out any folder slashes (like ../../) leaving only the true filename
   const safeFilename = path.basename(filenameParam);
   
+  // Log the request
+  fileLog(`🔍 File requested: ${safeFilename}`);
+
   // Safely construct the absolute path
   const filePath = path.join(process.cwd(), 'uploads', safeFilename);
 

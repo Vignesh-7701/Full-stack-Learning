@@ -1,11 +1,17 @@
+import { redisClient } from './redisClient';
 import express, { Request, Response } from 'express';
 import dotenv from 'dotenv';
 import swaggerUi from 'swagger-ui-express';
+import debug from 'debug';
 
 import authRoutes from './routes/authRoutes';
 import { verifyToken } from './middlewares/authMiddleware';
 import { generateOpenAPIDocument } from './swagger';
 import fileRoutes from './routes/fileRoutes';
+import { start } from 'node:repl';
+
+//debug
+const serverLog = debug('app:server');
 
 dotenv.config();
 
@@ -34,6 +40,20 @@ app.get('/api/protected', verifyToken, (req: Request, res: Response) => {
   });
 });
 
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+const startServer = async () => {
+  try{
+    await redisClient.connect();
+    app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
+  // replacing with debug
+  //serverLog(`Server is running on http://localhost:${PORT}`);
+  //serverLog(`API Documentation available at http://localhost:${PORT}/api-docs`);
 });
+  }
+    catch (error) {
+    console.error('❌ Failed to start server:', error);
+    process.exit(1);
+    }
+  }
+
+startServer();

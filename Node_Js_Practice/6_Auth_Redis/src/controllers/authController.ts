@@ -1,6 +1,11 @@
 import { Request, Response } from 'express';
 import jwt from 'jsonwebtoken';
 import { loginRequestSchema } from '../schemas/authSchema';
+import debug from 'debug';
+
+
+// Initialize the auth namespace
+const authLog = debug('app:auth');
 
 // The mock database
 const users = [
@@ -28,6 +33,8 @@ export const login = (req: Request, res: Response): void => {
   const user = users.find(u => u.username === username && u.password === password);
 
   if (!user) {
+    // Log failure
+    authLog(`Failed login attempt for username: ${username}`);
     res.status(401).json({ message: 'Invalid credentials' });
     return;
   }
@@ -43,6 +50,8 @@ export const login = (req: Request, res: Response): void => {
   const token = jwt.sign(payload, secret, { expiresIn: '1h' });
 
   // 4. Send it back
+  // Log successes
+  authLog(`Successful login for user ID: ${user.id}`);
   res.status(200).json({
     message: 'Login successful',
     token: token
