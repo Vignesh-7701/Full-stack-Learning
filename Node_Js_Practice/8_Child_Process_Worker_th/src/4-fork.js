@@ -13,9 +13,15 @@ console.log(`[Child] Forked Process PID: ${child.pid}\n`);
 // 1. Send a message over the IPC channel to trigger the calculation
 child.send('START');
 
+// to check time with worker thread
+console.time('Fork_Duration');
+
 // 2. Listen for the result coming back from the child
 child.on('message', (msg) => {
     console.log(`\n[Parent] Received result from child: ${msg.result}`);
+
+    // stop the clock
+    console.timeEnd('Fork_Duration');
 });
 
 // 3. THE PROOF: A heartbeat interval. 
