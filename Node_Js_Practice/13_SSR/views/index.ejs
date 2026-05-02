@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= pageTitle %></title>
+    <style>
+       body { font-family: system-ui, sans-serif; padding: 2rem; }
+        .server-data { background: #f0f4f8; padding: 1rem; border-radius: 8px; margin-bottom: 2rem; }
+        .log-list { background: #1e1e1e; color: #00ff00; padding: 1rem 2rem; border-radius: 8px; font-family: monospace; }
+        .INFO { color: #4dabf7; }
+        .WARN { color: #fcc419; }
+        .ERROR { color: #ff6b6b; }
+    </style>
+</head>
+<body>
+    <h1>Vanilla SSR Architecture</h1>
+    
+    <div class="server-data">
+        <h2>Data injected by Node.js:</h2>
+        <p><strong>Message:</strong> <%= serverMessage %></p>
+        <p><strong>Generated At:</strong> <%= timestamp %></p>
+    </div>
+
+    <h2>Database Results (Rendered via EJS Loop):</h2>
+    <ul class="log-list">
+        <!-- 1. Open the loop (No equals sign, just logic) -->
+        <% systemLogs.forEach(log => { %>
+            
+            <!-- 2. The HTML that will be repeated for every item -->
+            <li class="log-item">
+                <!-- 3. Output the exact values (Using equals sign) -->
+                <strong class="<%= log.level %>">[<%= log.level %>]</strong>: <%= log.message %>
+                <button class="resolve-btn">Resolve</button>
+            </li>
+            
+        <!-- 4. Close the loop bracket -->
+        <% }) %>
+    </ul>
+    <script src="/client.js"></script>
+</body>
+</html>

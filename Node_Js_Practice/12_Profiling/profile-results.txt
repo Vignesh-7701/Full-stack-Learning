@@ -1,0 +1,40 @@
+Statistical profiling result from isolate-000001B790745000-9884-v8.log, (2365 ticks, 0 unaccounted, 0 excluded).
+
+ [Shared libraries]:
+   ticks  total  nonlib   name
+   1656   70.0%          C:\WINDOWS\SYSTEM32\ntdll.dll
+    707   29.9%          C:\Program Files\nodejs\node.exe
+      1    0.0%          C:\WINDOWS\System32\KERNEL32.DLL
+
+ [JavaScript]:
+   ticks  total  nonlib   name
+      1    0.0%  100.0%  Builtin: LoadIC_NoFeedback
+
+ [C++]:
+   ticks  total  nonlib   name
+
+ [Summary]:
+   ticks  total  nonlib   name
+      1    0.0%  100.0%  JavaScript
+      0    0.0%    0.0%  C++
+      2    0.1%  200.0%  GC
+   2364  100.0%          Shared libraries
+
+ [C++ entry points]:
+   ticks    cpp   total   name
+
+ [Bottom up (heavy) profile]:
+  Note: percentage shows a share of a particular caller in the total
+  amount of its parent calls.
+  Callers occupying less than 1.0% are not shown.
+
+   ticks parent  name
+   1656   70.0%  C:\WINDOWS\SYSTEM32\ntdll.dll
+
+    707   29.9%  C:\Program Files\nodejs\node.exe
+    687   97.2%    JS: ~pbkdf2Sync node:internal/crypto/pbkdf2:63:20
+    687  100.0%      JS: ~heavyCryptoRoute F:\VS_CODE_DAILY_PRACTICE\Full-Stack Learning\Node_Js_Practice\12_Profiling\app.js:15:43
+    687  100.0%        JS: ~handleRequest F:\VS_CODE_DAILY_PRACTICE\Full-Stack Learning\Node_Js_Practice\12_Profiling\node_modules\router\lib\layer.js:142:56
+    687  100.0%          JS: ~next F:\VS_CODE_DAILY_PRACTICE\Full-Stack Learning\Node_Js_Practice\12_Profiling\node_modules\router\lib\route.js:119:17
+    687  100.0%            JS: ~dispatch F:\VS_CODE_DAILY_PRACTICE\Full-Stack Learning\Node_Js_Practice\12_Profiling\node_modules\router\lib\route.js:98:46
+
