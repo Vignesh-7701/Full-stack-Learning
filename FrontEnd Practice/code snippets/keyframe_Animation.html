@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+      font-family: sans-serif;
+      background-color: #f4f4f9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+      padding: 40px;
+    }
+
+    .container {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 600px;
+      text-align: center;
+    }
+
+    .shape-slide {
+      width: 100px;
+      height: 50px;
+      background-color: #3498db;
+      border-radius: 4px;
+      /* Name: slideFade, Duration: 3s, Easing: ease-in-out, Loop: infinite */
+      animation: slideFade 3s ease-in-out infinite;
+    }
+
+    @keyframes slideFade {
+      0% { transform: translateX(0); opacity: 1; }
+      50% { transform: translateX(200px); opacity: 0.2; }
+      100% { transform: translateX(0); opacity: 1; }
+    }
+
+    .shape-pulse {
+      width: 80px;
+      height: 80px;
+      background-color: #e74c3c;
+      border-radius: 50%; /* Makes it a circle */
+      margin: 0 auto;
+      /* Name: pulseAnim, Duration: 1.5s, Loop: infinite */
+      animation: pulseAnim 1.5s infinite;
+    }
+
+    @keyframes pulseAnim {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.5); } /* Grows 50% larger */
+      100% { transform: scale(1); }
+    }
+
+    .shape-spin {
+      width: 80px;
+      height: 80px;
+      background-color: #2ecc71;
+      margin: 0 auto;
+      /* linear makes the spinning speed constant so it doesn't slow down */
+      animation: spinAnim 2s linear infinite;
+    }
+
+    @keyframes spinAnim {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .shape-color {
+      width: 150px;
+      height: 50px;
+      background-color: #9b59b6;
+      border-radius: 25px; /* Pill shape */
+      margin: 0 auto;
+      animation: colorShiftAnim 4s infinite;
+    }
+
+    @keyframes colorShiftAnim {
+      0% { background-color: #9b59b6; }
+      33% { background-color: #f1c40f; } /* Yellow */
+      66% { background-color: #e67e22; } /* Orange */
+      100% { background-color: #9b59b6; } /* Back to purple to loop smoothly */
+    }
+
+    .shape-bounce {
+      width: 50px;
+      height: 50px;
+      background-color: #e84393;
+      border-radius: 50%;
+      margin: 0 auto;
+      /* alternate makes it play forwards, then backwards, then forwards... */
+      animation: bounceAnim 0.5s ease-in alternate infinite;
+    }
+
+    @keyframes bounceAnim {
+      0% { transform: translateY(0); } /* Top of the bounce */
+      100% { transform: translateY(100px); } /* Hits the "floor" */
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <h3>1. Slide and Fade (transform: translateX & opacity)</h3>
+    <div class="shape-slide"></div>
+  </div>
+
+  <div class="container">
+    <h3>2. Pulse (transform: scale)</h3>
+    <div class="shape-pulse"></div>
+  </div>
+
+  <div class="container">
+    <h3>3. Spin (transform: rotate)</h3>
+    <div class="shape-spin"></div>
+  </div>
+
+  <div class="container">
+    <h3>4. Color Shift (background-color)</h3>
+    <div class="shape-color"></div>
+  </div>
+
+  <div class="container">
+    <h3>5. Bounce (transform: translateY + alternate loop)</h3>
+    <div class="shape-bounce"></div>
+  </div>
+</body>
+</html>
