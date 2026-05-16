@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  # --- API Gateway ---
+  api-gateway:
+    build: 
+      context: ./api-gateway
+    ports:
+      - "4000:3000" # Exposes port 3000 to your local machine
+    depends_on:
+      - user-service
+      - booking-service
+    environment:
+      - PORT=3000
+      - NODE_ENV=development
+
+  # --- User Service ---
+  user-service:
+    build: 
+      context: ./services/user-service
+    ports:
+      - "3001:3001"
+    environment:
+      - PORT=3001
+      - NODE_ENV=development
+
+  # --- Booking Service ---
+  booking-service:
+    build: 
+      context: ./services/booking-service
+    ports:
+      - "3002:3002"
+    environment:
+      - PORT=3002
+      - NODE_ENV=development
